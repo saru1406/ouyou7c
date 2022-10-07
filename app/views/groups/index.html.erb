@@ -22,11 +22,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td>
-        <% if group.image.attached? %>
-        <%= image_tag group.image, size: "50x50" %>
-        <% else %>
-        <%= image_tag 'no_image', size: "50x50" %>
-        <% end %>
+        <%= image_tag group.get_image, size: '50x50' %>
         </td>
         <td><%= link_to group.name, group_path(group.id) %></td>
         <td><%= group.introduction %></td>
